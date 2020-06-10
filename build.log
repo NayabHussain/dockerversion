@@ -1,0 +1,23 @@
+Sending build context to Docker daemon  16.62MB
+Step 1/7 : From tomcat:9.0.35-jdk8
+ ---> 24d1f31bb71f
+Step 2/7 : COPY .keystore /usr/local/tomcat/.keystore
+ ---> Using cache
+ ---> 774983bfb20e
+Step 3/7 : COPY server.xml /usr/local/tomcat/conf/server.xml
+ ---> Using cache
+ ---> 5f31b7af24d3
+Step 4/7 : RUN rm -rf /usr/local/tomcat/webapps/*
+ ---> Using cache
+ ---> 90778a3d5eab
+Step 5/7 : COPY /target/webapp1.jar /usr/local/tomcat/lib/app.jar
+ ---> Using cache
+ ---> b034e563f4b9
+Step 6/7 : EXPOSE 8443
+ ---> Using cache
+ ---> 6c15791f0298
+Step 7/7 : CMD ["catalina.sh","run"]
+ ---> Using cache
+ ---> 208b243ba932
+Successfully built 208b243ba932
+Successfully tagged webapp1:1.0.0
